@@ -3,62 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网站收录</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>网赚项目收录网</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #searchInput {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+
+        th:hover {
+            background-color: #e9ecef;
+        }
+
+        th.sort-asc::after {
+            content: " ↑";
+            color: #007bff;
+        }
+
+        th.sort-desc::after {
+            content: " ↓";
+            color: #007bff;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            margin: 0 2px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .pagination span {
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .pagination input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .loading {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .export-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .export-button button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .export-button button:hover {
+            background-color: #218838;
+        }
+
+        .skeleton-row {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .skeleton-cell {
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .rating {
+            color: #ffc107;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">网站收录</a>
+    <div class="container">
+        <h1>网赚项目收录网</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索项目名称或描述...">
         </div>
-    </nav>
-
-    <!-- 主内容 -->
-    <div class="container my-5">
-        <h1 class="text-center mb-4">网站收录</h1>
-
-        <!-- 提交表单 -->
-        <form id="submitForm" class="mb-5">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="name" class="form-label">网站名称</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="url" class="form-label">网站网址</label>
-                    <input type="url" class="form-control" id="url" required>
-                </div>
-                <div class="col-md-12">
-                    <label for="description" class="form-label">网站描述</label>
-                    <textarea class="form-control" id="description" rows="3" required></textarea>
-                </div>
-                <div class="col-md-6">
-                    <label for="category" class="form-label">分类</label>
-                    <select class="form-select" id="category" required>
-                        <option value="科技">科技</option>
-                        <option value="教育">教育</option>
-                        <option value="娱乐">娱乐</option>
-                        <option value="其他">其他</option>
-                    </select>
-                </div>
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary w-100">提交</button>
-                </div>
-            </div>
-        </form>
-
-        <!-- 搜索框 -->
-        <div class="mb-4">
-            <input type="text" class="form-control" id="searchInput" placeholder="搜索网站名称或描述">
+        <div class="export-button">
+            <button id="exportButton">导出当前页为CSV</button>
         </div>
-
-        <!-- 收录列表 -->
-        <h2 class="mb-3">收录列表</h2>
-        <ul id="websiteList" class="list-group"></ul>
+        <table id="projectTable">
+            <thead>
+                <tr>
+                    <th data-sort="id">序号</th>
+                    <th data-sort="name">项目名称</th>
+                    <th>网址</th>
+                    <th>内容描述</th>
+                    <th data-sort="rating">推荐指数</th>
+                    <th>联系方式</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- 数据由JavaScript动态加载 -->
+            </tbody>
+        </table>
+        <div class="loading" id="loading">加载中...</div>
+        <div class="pagination">
+            <button id="firstPage">首页</button>
+            <button id="prevPage">上一页</button>
+            <span id="pageInfo"></span>
+            <input type="number" id="pageInput" min="1" value="1">
+            <button id="goToPage">跳转</button>
+            <button id="nextPage">下一页</button>
+            <button id="lastPage">尾页</button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // 100个网赚项目数据
+        const projects = [];
+        for (let i = 1; i <= 100; i++) {
+            projects.push({
+                id: i,
+                name: `网赚项目${i}`,
+                url: `https://www.example${i}.com`,
+                description: `这是一个示例网赚项目${i}的描述，适合新手操作。`,
+                rating: Math.floor(Math.random() * 5) + 1, // 随机生成1-5的推荐指数
+                contact: `contact${i}@example.com`
+            });
+        }
+
+        // 分页和搜索功能
+        const projectsPerPage = 20; // 每页显示20个项目
+        let currentPage = 1;
+        let filteredProjects = [...projects];
+        let sortKey = "id";
+        let sortOrder = 1; // 1: 升序, -1: 降序
+
+        // 渲染表格
+        function renderTable() {
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = "";
+
+            // 显示骨架屏
+            for (let i = 0; i < projectsPerPage; i++) {
+                const row = document.createElement("tr");
+                row.className = "skeleton-row";
+                row.innerHTML = `
+                    <td><div class="skeleton-cell"></div></td>
+                    <td><div class="skeleton-cell"></div></td>
+                    <td><div class="skeleton-cell"></div></td>
+                    <td><div class="skeleton-cell"></div></td>
+                    <td><div class="skeleton-cell"></div></td>
+                    <td><div class="skeleton-cell"></div></td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            // 模拟延迟加载
+            setTimeout(() => {
+                tbody.innerHTML = "";
+                const start = (currentPage - 1) * projectsPerPage;
+                const end = start + projectsPerPage;
+                const paginatedProjects = filteredProjects.slice(start, end);
+
+                paginatedProjects.forEach(project => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${project.id}</td>
+                        <td>${project.name}</td>
+                        <td><a href="${project.url}" target="_blank">${project.url}</a></td>
+                        <td>${project.description}</td>
+                        <td class="rating">${"★".repeat(project.rating)}${"☆".repeat(5 - project.rating)}</td>
+                        <td>${project.contact}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+
+                updatePagination();
+            }, 500); // 模拟500ms延迟
+        }
+
+        // 更新分页信息
+        function updatePagination() {
+            const pageInfo = document.getElementById("pageInfo");
+            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+            const start = (currentPage - 1) * projectsPerPage + 1;
+            const end = Math.min(currentPage * projectsPerPage, filteredProjects.length);
+            pageInfo.textContent = `第 ${currentPage} 页，共 ${totalPages} 页（显示 ${start}-${end} 条，共 ${filteredProjects.length} 条）`;
+
+            document.getElementById("firstPage").disabled = currentPage === 1;
+            document.getElementById("prevPage").disabled = currentPage === 1;
+            document.getElementById("nextPage").disabled = currentPage === totalPages;
+            document.getElementById("lastPage").disabled = currentPage === totalPages;
+            document.getElementById("pageInput").value = currentPage;
+        }
+
+        // 搜索功能（防抖处理）
+        let searchTimeout;
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = e.target.value.toLowerCase();
+                filteredProjects = projects.filter(project =>
+                    project.name.toLowerCase().includes(searchTerm) ||
+                    project.description.toLowerCase().includes(searchTerm)
+                );
+                currentPage = 1;
+                renderTable();
+            }, 300);
+        });
+
+        // 分页按钮
+        document.getElementById("firstPage").addEventListener("click", () => {
+            currentPage = 1;
+            renderTable();
+        });
+
+        document.getElementById("prevPage").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+
+        document.getElementById("nextPage").addEventListener("click", () => {
+            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        });
+
+        document.getElementById("lastPage").addEventListener("click", () => {
+            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+            currentPage = totalPages;
+            renderTable();
+        });
+
+        // 跳转到指定页
+        document.getElementById("goToPage").addEventListener("click", () => {
+            const pageInput = document.getElementById("pageInput");
+            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+            const page = parseInt(pageInput.value, 10);
+
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderTable();
+            } else {
+                alert(`请输入有效的页码（1-${totalPages}）`);
+            }
+        });
+
+        // 排序功能
+        document.querySelectorAll("#projectTable th[data-sort]").forEach(header => {
+            header.addEventListener("click", () => {
+                const key = header.getAttribute("data-sort");
+                if (sortKey === key) {
+                    sortOrder *= -1; // 切换排序顺序
+                } else {
+                    sortKey = key;
+                    sortOrder = 1;
+                }
+                filteredProjects.sort((a, b) => {
+                    if (a[sortKey] < b[sortKey]) return -1 * sortOrder;
+                    if (a[sortKey] > b[sortKey]) return 1 * sortOrder;
+                    return 0;
+                });
+                currentPage = 1;
+                renderTable();
+
+                // 更新排序箭头
+                document.querySelectorAll("#projectTable th").forEach(th => {
+                    th.classList.remove("sort-asc", "sort-desc");
+                });
+                header.classList.add(sortOrder === 1 ? "sort-asc" : "sort-desc");
+            });
+        });
+
+        // 导出当前页为CSV
+        document.getElementById("exportButton").addEventListener("click", () => {
+            const headers = ["序号", "项目名称", "网址", "内容描述", "推荐指数", "联系方式"];
+            const start = (currentPage - 1) * projectsPerPage;
+            const end = start + projectsPerPage;
+            const currentPageProjects = filteredProjects.slice(start, end);
+
+            const csvContent = [
+                headers.join(","),
+                ...currentPageProjects.map(project => [
+                    project.id,
+                    project.name,
+                    project.url,
+                    project.description,
+                    project.rating,
+                    project.contact
+                ].join(","))
+            ].join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `网赚项目_第${currentPage}页.csv`;
+            link.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // 初始化
+        renderTable();
+        document.getElementById("loading").style.display = "none";
+    </script>
 </body>
 </html>
