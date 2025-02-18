@@ -576,34 +576,51 @@ a[target="_blank"] {
     letter-spacing: 2px;
 }
 
- 
-/* 添加钱的图案样式 */
-.header-title {
-    text-align: center;
-    margin-bottom: 30px;
-}
 
-.header-title a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    font-size: 36px;
-    font-weight: 600;
-}
 
-.header-title img {
+
+
+
+
+/* 钱币图案样式 */
+.money-icon {
     width: 50px;
     height: 50px;
-    vertical-align: middle;
+    background-color: #ffd700; /* 金色背景 */
+    border-radius: 50%; /* 圆形 */
+    display: inline-block;
     margin-right: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
-.header-title a:hover {
-    text-decoration: underline;
+.money-icon::before {
+    content: "$"; /* 钱币符号 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
 }
 
- 
+/* 标题样式 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
 
+.header h1 {
+    font-size: 36px;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+}
 
 
 
@@ -622,12 +639,14 @@ a[target="_blank"] {
 <body>
     <div class="container">
       
-<div class="header-title">
-    <a href="/" onclick="goToHome(event)">
-        <img src="https://via.placeholder.com/50?text=$" alt="Money Icon" class="money-icon">
-        网赚项目收录网
-    </a>
-</div>
+ 
+       <div class="header">
+               <div class="money-icon" onclick="goToHome()"></div>
+                <h1 onclick="goToHome()">网赚项目收录网</h1>
+        </div>
+    <!-- 其他内容 -->
+ 
+
 
 
 
@@ -1788,13 +1807,11 @@ row.addEventListener("click", (event) => {
         renderTable();
 
 
-
-// 返回首页的函数
-function goToHome(event) {
-    event.preventDefault(); // 阻止默认的链接行为
-    window.location.href = "/"; // 跳转到首页
+function goToHome() {
+    window.location.href = "https://xnworld.github.io/shoulu/"; // 假设首页是当前页面的顶部
 }
 
+ 
 
 
 
