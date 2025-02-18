@@ -625,106 +625,985 @@ a[target="_blank"] {
 
     <script>
         // 初始化数据
-        const projects = [
-            {
-                id: 1,
-                name: "网赚项目1",
-                url: "https://www.example1.com",
-                description: "专业网络赚钱项目1，日均收益￥200",
-                rating: 3,
-                contact: "contact1@example.com"
-            },
-            {
-                id: 2,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 3,
-                name: "网赚阿萨法第三方艾师傅阿斯顿发第三方是的范德萨发放啊发顺丰项目3",
-                url: "https://www.exampl3.com",
-                description: "专业网络赚水电费阿第三方发啊多少发斯蒂芬阿范德萨发斯蒂芬项目3，日均收益￥333333",
-                rating: 4,
-                contact: "contact2@example.阿打发打发是啊孙菲菲撒旦法撒旦法阿萨法撒旦法大法师的发沙发斯蒂芬阿 "
-            },
-            {
-                id: 4,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 5,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 6,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 7,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 8,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 9,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 10,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 11,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
-            {
-                id: 12,
-                name: "网赚项目2",
-                url: "https://www.example2.com",
-                description: "专业网络赚钱项目2，日均收益￥300",
-                rating: 4,
-                contact: "contact2@example.com"
-            },
+const projects = [
+    {
+        id: 1,
+        name: "Swagbucks问卷调查",
+        url: "https://www.swagbucks.com",
+        description: "全球知名问卷平台，完成问卷赚取积分兑换现金，月均收益$50+",
+        rating: 4,
+        contact: "support@swagbucks.com"
+    },
+    {
+        id: 2,
+        name: "Fiverr自由职业",
+        url: "https://www.fiverr.com",
+        description: "提供设计/编程/翻译等服务，技能变现平台，接单自由",
+        rating: 5,
+        contact: "help@fiverr.com"
+    },
+    {
+        id: 3,
+        name: "Amazon联盟营销",
+        url: "https://affiliate-program.amazon.com",
+        description: "推广亚马逊商品赚佣金，成熟联盟计划，佣金比例1-10%",
+        rating: 4,
+        contact: "affiliate-support@amazon.com"
+    },
+    {
+        id: 4,
+        name: "Shutterstock图库",
+        url: "https://www.shutterstock.com",
+        description: "上传摄影作品赚取分成，单张图片收益$0.25起",
+        rating: 3,
+        contact: "contributors@shutterstock.com"
+    },
+    {
+        id: 5,
+        name: "UserTesting应用测试",
+        url: "https://www.usertesting.com",
+        description: "通过测试网站/APP获取报酬，单次测试$10起",
+        rating: 4,
+        contact: "tester@usertesting.com"
+    },
+    {
+        id: 6,
+        name: "Udemy在线课程",
+        url: "https://www.udemy.com",
+        description: "创建并销售在线课程，平台分成制，月收益$1000+",
+        rating: 4,
+        contact: "instructor@udemy.com"
+    },
+    {
+        id: 7,
+        name: "Shopify独立站",
+        url: "https://www.shopify.com",
+        description: "搭建电商独立站，支持代购/直销模式，需运营投入",
+        rating: 3,
+        contact: "sales@shopify.com"
+    },
+    {
+        id: 8,
+        name: "YouTube创作者",
+        url: "https://www.youtube.com",
+        description: "视频广告分成+品牌合作，万次播放收益$3-5",
+        rating: 5,
+        contact: "partner-support@youtube.com"
+    },
+    {
+        id: 9,
+        name: "ClickBank数字产品",
+        url: "https://www.clickbank.com",
+        description: "推广数字产品获取高佣金，最高可达75%分成",
+        rating: 4,
+        contact: "affiliate@clickbank.com"
+    },
+    {
+        id: 10,
+        name: "Upwork远程工作",
+        url: "https://www.upwork.com",
+        description: "承接编程/写作/设计等远程项目，时薪$15起",
+        rating: 4,
+        contact: "support@upwork.com"
+    },
+    {
+        id: 11,
+        name: "Medium写作平台",
+        url: "https://medium.com",
+        description: "通过付费阅读文章获得分成，优质内容月入$500+",
+        rating: 3,
+        contact: "writers@medium.com"
+    },
+    {
+        id: 12,
+        name: "TaskRabbit零工平台",
+        url: "https://www.taskrabbit.com",
+        description: "提供本地跑腿/维修等服务，时薪$20+",
+        rating: 3,
+        contact: "help@taskrabbit.com"
+    },
+    {
+        id: 13,
+        name: "Redbubble周边设计",
+        url: "https://www.redbubble.com",
+        description: "设计T恤/手机壳等周边商品，每单抽成20%",
+        rating: 3,
+        contact: "artist@redbubble.com"
+    },
+    {
+        id: 14,
+        name: "Patreon创作者订阅",
+        url: "https://www.patreon.com",
+        description: "建立粉丝订阅制，稳定月收入模式",
+        rating: 4,
+        contact: "creator@patreon.com"
+    },
+    {
+        id: 15,
+        name: "MTurk微任务",
+        url: "https://www.mturk.com",
+        description: "亚马逊旗下数据标注/简单任务平台，单任务$0.1-1",
+        rating: 2,
+        contact: "mturk-support@amazon.com"
+    },
+{
+    id: 16,
+    name: "Etsy手工艺品销售",
+    url: "https://www.etsy.com",
+    description: "销售手工艺品和复古商品，适合手工艺爱好者，通过店铺运营盈利。",
+    rating: 3,
+    contact: "support@etsy.com"
+},
+{
+    id: 17,
+    name: "TikTok创作者",
+    url: "https://www.tiktok.com",
+    description: "通过短视频创作获取流量变现，适合创意内容创作者。",
+    rating: 4,
+    contact: "creator@tiktok.com"
+},
+{
+    id: 18,
+    name: "Ebay二手商品销售",
+    url: "https://www.ebay.com",
+    description: "销售二手物品或新品，适合有闲置物品或采购能力的人。",
+    rating: 3,
+    contact: "support@ebay.com"
+},
+{
+    id: 19,
+    name: "Airbnb民宿出租",
+    url: "https://www.airbnb.com",
+    description: "出租闲置房屋或房间，适合有房产资源的人。",
+    rating: 4,
+    contact: "host@airbnb.com"
+},
+{
+    id: 20,
+    name: "Freelancer自由职业",
+    url: "https://www.freelancer.com",
+    description: "提供各种专业服务，如设计、编程等，按项目收费。",
+    rating: 4,
+    contact: "support@freelancer.com"
+},
+{
+    id: 21,
+    name: "Instacart代购服务",
+    url: "https://www.instacart.com",
+    description: "为用户代购杂货，按订单赚取佣金，适合有车或步行范围内的兼职者。",
+    rating: 3,
+    contact: "support@instacart.com"
+},
+{
+    id: 22,
+    name: "Canva设计服务",
+    url: "https://www.canva.com",
+    description: "提供设计服务或模板，适合平面设计师。",
+    rating: 3,
+    contact: "support@canva.com"
+},
+{
+    id: 23,
+    name: "StockX潮流商品交易",
+    url: "https://www.stockx.com",
+    description: "买卖限量版运动鞋、服装等潮流商品，适合潮流爱好者。",
+    rating: 4,
+    contact: "support@stockx.com"
+},
+{
+    id: 24,
+    name: "Wix网站搭建",
+    url: "https://www.wix.com",
+    description: "为企业或个人搭建网站，按项目收费，适合有一定设计和开发能力的人。",
+    rating: 3,
+    contact: "support@wix.com"
+},
+{
+    id: 25,
+    name: "Hubstaff远程工作平台",
+    url: "https://www.hubstaff.com",
+    description: "寻找远程工作机会，适合自由职业者或远程工作者。",
+    rating: 4,
+    contact: "support@hubstaff.com"
+},
+{
+    id: 26,
+    name: "Zazzle定制商品销售",
+    url: "https://www.zazzle.com",
+    description: "设计并销售定制商品，如T恤、杯子等，适合创意设计师。",
+    rating: 3,
+    contact: "support@zazzle.com"
+},
+{
+    id: 27,
+    name: "Skillshare在线课程",
+    url: "https://www.skillshare.com",
+    description: "创建并销售在线课程，适合专业人士或技能达人。",
+    rating: 4,
+    contact: "support@skillshare.com"
+},
+{
+    id: 28,
+    name: "Lyft网约车服务",
+    url: "https://www.lyft.com",
+    description: "提供网约车服务，适合有车的人。",
+    rating: 3,
+    contact: "support@lyft.com"
+},
+{
+    id: 29,
+    name: "Vistaprint印刷服务",
+    url: "https://www.vistaprint.com",
+    description: "提供印刷服务，如名片、传单等，适合有客户资源的人。",
+    rating: 3,
+    contact: "support@vistaprint.com"
+},
+{
+    id: 30,
+    name: "Pinterest营销",
+    url: "https://www.pinterest.com",
+    description: "通过Pinterest推广产品或服务，适合内容创作者和营销人员。",
+    rating: 3,
+    contact: "support@pinterest.com"
+},
+{
+    id: 31,
+    name: "Square支付服务",
+    url: "https://www.squareup.com",
+    description: "为商家提供支付解决方案，适合有线下业务的人。",
+    rating: 3,
+    contact: "support@squareup.com"
+},
+{
+    id: 32,
+    name: "Rover宠物托管",
+    url: "https://www.rover.com",
+    description: "提供宠物托管服务，适合宠物爱好者。",
+    rating: 4,
+    contact: "support@rover.com"
+},
+{
+    id: 33,
+    name: "Thumbtack本地服务",
+    url: "https://www.thumbtack.com",
+    description: "提供本地服务，如维修、清洁等，适合手艺人或服务提供商。",
+    rating: 3,
+    contact: "support@thumbtack.com"
+},
+{
+    id: 34,
+    name: "Squarespace网站搭建",
+    url: "https://www.squarespace.com",
+    description: "为企业或个人搭建网站，适合有一定设计能力的人。",
+    rating: 3,
+    contact: "support@squarespace.com"
+},
+{
+    id: 35,
+    name: "Craigslist二手交易",
+    url: "https://www.craigslist.org",
+    description: "发布或购买二手物品，适合有闲置物品或采购能力的人。",
+    rating: 3,
+    contact: "support@craigslist.org"
+},
+{
+    id: 36,
+    name: "Photobucket图片托管",
+    url: "https://www.photobucket.com",
+    description: "提供图片托管服务，适合摄影师或博主。",
+    rating: 3,
+    contact: "support@photobucket.com"
+},
+{
+    id: 37,
+    name: "Scribd在线阅读",
+    url: "https://www.scribd.com",
+    description: "提供在线阅读和有声读物服务，适合内容创作者。",
+    rating: 3,
+    contact: "support@scribd.com"
+},
+{
+    id: 38,
+    id: 38,
+    name: "Wish电商平台",
+    url: "https://www.wish.com",
+    description: "销售低价商品，适合有供应链资源的人。",
+    rating: 3,
+    contact: "support@wish.com"
+},
+{
+    id: 39,
+    name: "Dropbox云存储服务",
+    url: "https://www.dropbox.com",
+    description: "提供云存储服务，适合有客户资源的人。",
+    rating: 3,
+    contact: "support@dropbox.com"
+},
+{
+    id: 40,
+    name: "Venmo支付平台",
+    url: "https://www.venmo.com",
+    description: "提供个人之间支付和转账服务，适合有社交网络的人。",
+    rating: 3,
+    contact: "support@venmo.com"
+},
+{
+    id: 41,
+    name: "Outreach销售平台",
+    url: "https://www.outreach.io",
+    description: "提供销售和客户关系管理工具，适合销售人员。",
+    rating: 3,
+    contact: "support@outreach.io"
+},
+{
+    id: 42,
+    name: "Buffer社交媒体管理",
+    url: "https://www.buffer.com",
+    description: "管理社交媒体账号，适合内容创作者或营销人员。",
+    rating: 3,
+    contact: "support@buffer.com"
+},
+{
+    id: 43,
+    name: "Mailchimp邮件营销",
+    url: "https://www.mailchimp.com",
+    description: "提供邮件营销服务，适合企业或个人。",
+    rating: 3,
+    contact: "support@mailchimp.com"
+},
+{
+    id: 44,
+    name: "Shopkick购物返现",
+    url: "https://www.shopkick.com",
+    description: "购物返现平台，适合消费者。",
+    rating: 3,
+    contact: "support@shopkick.com"
+},
+{
+    id: 45,
+    name: "Robinhood股票交易",
+    url: "https://www.robinhood.com",
+    description: "提供股票交易服务，适合投资者。",
+    rating: 3,
+    contact: "support@robinhood.com"
+},
+{
+    id: 46,
+    name: "InstaGress社交媒体营销",
+    url: "https://www.instagram.com",
+    description: "通过Instagram推广产品或服务，适合内容创作者和营销人员。",
+    rating: 3,
+    contact: "support@instagram.com"
+},
+{
+    id: 47,
+    name: "Twitch直播",
+    url: "https://www.twitch.tv",
+    description: "通过游戏直播或创意内容直播获取打赏和广告收入，适合游戏玩家和内容创作者。",
+    rating: 4,
+    contact: "support@twitch.tv"
+},
+{
+    id: 48,
+    name: "SoundCloud音乐创作",
+    url: "https://www.soundcloud.com",
+    description: "上传和分享音乐作品，通过粉丝打赏和广告分成盈利，适合音乐创作者。",
+    rating: 3,
+    contact: "support@soundcloud.com"
+},
+{
+    id: 49,
+    name: "Behance设计作品展示",
+    url: "https://www.behance.net",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@behance.net"
+},
+{
+    id: 50,
+    name: "Quora问答平台",
+    url: "https://www.quora.com",
+    description: "通过回答问题获取曝光，通过广告和品牌合作盈利，适合知识分享者。",
+    rating: 3,
+    contact: "support@quora.com"
+},
+{
+    id: 51,
+    name: "Vimeo视频创作",
+    url: "https://www.vimeo.com",
+    description: "上传高质量视频，通过付费订阅和广告分成盈利，适合视频创作者。",
+    rating: 3,
+    contact: "support@vimeo.com"
+},
+{
+    id: 52,
+    name: "Ecosia环保搜索引擎",
+    url: "https://www.ecosia.com",
+    description: "通过搜索广告盈利，同时支持环保项目，适合环保爱好者。",
+    rating: 3,
+    contact: "support@ecosia.com"
+},
+{
+    id: 53,
+    name: "Fiverr Pro高级服务",
+    url: "https://www.fiverrpro.com",
+    description: "提供高级专业服务，如设计、编程等，适合资深自由职业者。",
+    rating: 4,
+    contact: "pro@fiverr.com"
+},
+{
+    id: 54,
+    name: "LinkedIn领英营销",
+    url: "https://www.linkedin.com",
+    description: "通过领英推广产品或服务，适合企业主和营销人员。",
+    rating: 3,
+    contact: "support@linkedin.com"
+},
+{
+    id: 55,
+    name: "Pinterest创意营销",
+    url: "https://www.pinterest.com",
+    description: "通过Pinterest推广创意产品或服务，适合内容创作者。",
+    rating: 3,
+    contact: "support@pinterest.com"
+},
+{
+    id: 56,
+    name: "WordPress网站搭建",
+    url: "https://www.wordpress.com",
+    description: "为企业或个人搭建网站，适合有一定设计和开发能力的人。",
+    rating: 3,
+    contact: "support@wordpress.com"
+},
+{
+    id: 57,
+    name: "Medium付费阅读",
+    url: "https://www.medium.com/membership",
+    description: "通过付费阅读文章获得分成，适合优质内容创作者。",
+    rating: 3,
+    contact: "membership@medium.com"
+},
+{
+    id: 58,
+    name: "Discord社区运营",
+    url: "https://www.discord.com",
+    description: "通过运营社区获取打赏和广告收入，适合社区管理者。",
+    rating: 3,
+    contact: "support@discord.com"
+},
+{
+    id: 59,
+    name: "GitHub开源项目",
+    url: "https://www.github.com",
+    description: "通过开源项目获取赞助和合作机会，适合开发者。",
+    rating: 3,
+    contact: "support@github.com"
+},
+{
+    id: 60,
+    name: "Spotify音乐创作",
+    url: "https://www.spotify.com",
+    description: "上传音乐作品，通过流媒体播放分成盈利，适合音乐创作者。",
+    rating: 3,
+    contact: "support@spotify.com"
+},
+{
+    id: 61,
+    name: "Ebay Dropshipping",
+    url: "https://www.ebay.com",
+    description: "通过Ebay进行无库存销售，适合电商新手。",
+    rating: 3,
+    contact: "support@ebay.com"
+},
+{
+    id: 62,
+    name: "TikTok电商带货",
+    url: "https://www.tiktok.com",
+    description: "通过TikTok直播或短视频带货，适合内容创作者和电商从业者。",
+    rating: 4,
+    contact: "support@tiktok.com"
+},
+{
+    id: 63,
+    name: "B站UP主",
+    url: "https://www.bilibili.com",
+    description: "通过视频创作获取广告分成和粉丝打赏，适合创意内容创作者。",
+    rating: 4,
+    contact: "support@bilibili.com"
+},
+{
+    id: 64,
+    name: "小红书博主",
+    url: "https://www.xiaohongshu.com",
+    description: "通过内容创作和品牌合作盈利，适合生活方式和美妆博主。",
+    rating: 3,
+    contact: "support@xiaohongshu.com"
+},
+{
+    id: 65,
+    name: "知乎专栏作者",
+    url: "https://www.zhihu.com",
+    description: "通过专栏文章获取打赏和广告收入，适合知识分享者。",
+    rating: 3,
+    contact: "support@zhihu.com"
+},
+{
+    id: 66,
+    name: "喜马拉雅音频创作",
+    url: "https://www.ximalaya.com",
+    description: "通过音频内容创作获取分成，适合有声读物创作者和播客。",
+    rating: 3,
+    contact: "support@ximalaya.com"
+},
+{
+    id: 67,
+    name: "抖音小店",
+    url: "https://www.douyin.com",
+    description: "通过抖音平台开设小店，进行电商销售，适合电商从业者。",
+    rating: 4,
+    contact: "support@douyin.com"
+},
+{
+    id: 68,
+    name: "微信公众号",
+    url: "https://mp.weixin.qq.com",
+    description: "通过内容创作和广告分成盈利，适合内容创作者。",
+    rating: 3,
+    contact: "support@weixin.qq.com"
+},
+{
+    id: 69,
+    name: "Bing搜索引擎营销",
+    url: "https://www.bing.com",
+    description: "通过Bing广告推广产品或服务，适合营销人员。",
+    rating: 3,
+    contact: "support@bing.com"
+},
+{
+    id: 70,
+    name: "Telegram频道运营",
+    url: "https://www.telegram.org",
+    description: "通过Telegram频道推广内容或产品，适合内容创作者。",
+    rating: 3,
+    contact: "support@telegram.org"
+},
+{
+    id: 71,
+    name: "Clubhouse音频社交",
+    url: "https://www.clubhouse.com",
+    description: "通过音频社交获取品牌合作机会，适合社交达人。",
+    rating: 3,
+    contact: "support@clubhouse.com"
+},
+{
+    id: 72,
+    name: "OnlyFans创作者",
+    url: "https://www.onlyfans.com",
+    description: "通过付费订阅模式获取收入，适合内容创作者。",
+    rating: 3,
+    contact: "support@onlyfans.com"
+},
+{
+    id: 73,
+    name: "Stack Overflow技术问答",
+    url: "https://www.stackoverflow.com",
+    description: "通过技术问答获取广告收入，适合开发者。",
+    rating: 3,
+    contact: "support@stackoverflow.com"
+},
+{
+    id: 74,
+    name: "Dribbble设计作品展示",
+    url: "https://www.dribbble.com",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@dribbble.com"
+},
+{
+    id: 75,
+    name: "Behance设计作品展示",
+    url: "https://www.behance.net",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@behance.net"
+},{
+    id: 76,
+    name: "Freepik设计资源销售",
+    url: "https://www.freepik.com",
+    description: "上传设计资源（如图片、矢量图、PSD模板等），通过销售获取收益。",
+    rating: 3,
+    contact: "support@freepik.com"
+},
+{
+    id: 77,
+    name: "Ecosia环保搜索引擎推广",
+    url: "https://www.ecosia.com",
+    description: "推广Ecosia搜索引擎，通过用户搜索行为获取广告分成，同时支持环保项目。",
+    rating: 3,
+    contact: "support@ecosia.com"
+},
+{
+    id: 78,
+    name: "Etsy手工艺术品销售",
+    url: "https://www.etsy.com",
+    description: "销售手工制作的艺术品和定制化商品，适合手工艺人和创意设计师。",
+    rating: 3,
+    contact: "support@etsy.com"
+},
+{
+    id: 79,
+    name: "TikTok电商带货",
+    url: "https://www.tiktok.com",
+    description: "通过TikTok直播或短视频推广商品，适合有创意和粉丝基础的内容创作者。",
+    rating: 4,
+    contact: "support@tiktok.com"
+},
+{
+    id: 80,
+    name: "B站UP主",
+    url: "https://www.bilibili.com",
+    description: "通过上传视频获取广告分成、粉丝打赏和品牌合作收入，适合视频创作者。",
+    rating: 4,
+    contact: "support@bilibili.com"
+},
+{
+    id: 81,
+    name: "小红书博主",
+    url: "https://www.xiaohongshu.com",
+    description: "通过生活方式、美妆、时尚等内容创作获取品牌合作和广告收入。",
+    rating: 3,
+    contact: "support@xiaohongshu.com"
+},
+{
+    id: 82,
+    name: "知乎专栏作者",
+    url: "https://www.zhihu.com",
+    description: "通过撰写高质量的专栏文章获取打赏和广告收入，适合知识分享者。",
+    rating: 3,
+    contact: "support@zhihu.com"
+},
+{
+    id: 83,
+    name: "喜马拉雅音频创作",
+    url: "https://www.ximalaya.com",
+    description: "通过有声读物、播客等内容创作获取分成，适合音频创作者。",
+    rating: 3,
+    contact: "support@ximalaya.com"
+},
+{
+    id: 84,
+    name: "抖音小店",
+    url: "https://www.douyin.com",
+    description: "通过抖音平台开设小店，销售商品获取收益，适合电商从业者。",
+    rating: 4,
+    contact: "support@douyin.com"
+},
+{
+    id: 85,
+    name: "微信公众号",
+    url: "https://mp.weixin.qq.com",
+    description: "通过内容创作获取广告分成、粉丝打赏和品牌合作收入，适合内容创作者。",
+    rating: 3,
+    contact: "support@weixin.qq.com"
+},
+{
+    id: 86,
+    name: "Bing搜索引擎营销",
+    url: "https://www.bing.com",
+    description: "通过Bing广告推广产品或服务，适合营销人员。",
+    rating: 3,
+    contact: "support@bing.com"
+},
+{
+    id: 87,
+    name: "Telegram频道运营",
+    url: "https://www.telegram.org",
+    description: "通过Telegram频道推广内容或产品，适合内容创作者。",
+    rating: 3,
+    contact: "support@telegram.org"
+},
+{
+    id: 88,
+    name: "Clubhouse音频社交",
+    url: "https://www.clubhouse.com",
+    description: "通过音频社交获取品牌合作机会，适合社交达人。",
+    rating: 3,
+    contact: "support@clubhouse.com"
+},
+{
+    id: 89,
+    name: "OnlyFans创作者",
+    url: "https://www.onlyfans.com",
+    description: "通过付费订阅模式获取收入，适合内容创作者。",
+    rating: 3,
+    contact: "support@onlyfans.com"
+},
+{
+    id: 90,
+    name: "Stack Overflow技术问答",
+    url: "https://www.stackoverflow.com",
+    description: "通过技术问答获取广告收入，适合开发者。",
+    rating: 3,
+    contact: "support@stackoverflow.com"
+},
+{
+    id: 91,
+    name: "Dribbble设计作品展示",
+    url: "https://www.dribbble.com",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@dribbble.com"
+},
+{
+    id: 92,
+    name: "Behance设计作品展示",
+    url: "https://www.behance.net",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@behance.net"
+},
+{
+    id: 93,
+    name: "Spotify音乐创作",
+    url: "https://www.spotify.com",
+    description: "上传音乐作品，通过流媒体播放分成盈利，适合音乐创作者。",
+    rating: 3,
+    contact: "support@spotify.com"
+},
+{
+    id: 94,
+    name: "Ebay Dropshipping",
+    url: "https://www.ebay.com",
+    description: "通过Ebay进行无库存销售，适合电商新手。",
+    rating: 3,
+    contact: "support@ebay.com"
+},
+{
+    id: 95,
+    name: "TikTok电商带货",
+    url: "https://www.tiktok.com",
+    description: "通过TikTok直播或短视频带货，适合内容创作者和电商从业者。",
+    rating: 4,
+    contact: "support@tiktok.com"
+},
+{
+    id: 96,
+    name: "B站UP主",
+    url: "https://www.bilibili.com",
+    description: "通过视频创作获取广告分成和粉丝打赏，适合创意内容创作者。",
+    rating: 4,
+    contact: "support@bilibili.com"
+},
+{
+    id: 97,
+    name: "小红书博主",
+    url: "https://www.xiaohongshu.com",
+    description: "通过内容创作和品牌合作盈利，适合生活方式和美妆博主。",
+    rating: 3,
+    contact: "support@xiaohongshu.com"
+},
+{
+    id: 98,
+    name: "知乎专栏作者",
+    url: "https://www.zhihu.com",
+    description: "通过专栏文章获取打赏和广告收入，适合知识分享者。",
+    rating: 3,
+    contact: "support@zhihu.com"
+},
+{
+    id: 99,
+    name: "喜马拉雅音频创作",
+    url: "https://www.ximalaya.com",
+    description: "通过音频内容创作获取分成，适合有声读物创作者和播客。",
+    rating: 3,
+    contact: "support@ximalaya.com"
+},
+{
+    id: 100,
+    name: "抖音小店",
+    url: "https://www.douyin.com",
+    description: "通过抖音平台开设小店，进行电商销售，适合电商从业者。",
+    rating: 4,
+    contact: "support@douyin.com"
+},
+{
+    id: 101,
+    name: "微信公众号",
+    url: "https://mp.weixin.qq.com",
+    description: "通过内容创作和广告分成盈利，适合内容创作者。",
+    rating: 3,
+    contact: "support@weixin.qq.com"
+},
+{
+    id: 102,
+    name: "Ecosia环保搜索引擎推广",
+    url: "https://www.ecosia.com",
+    description: "通过推广Ecosia搜索引擎，用户每次搜索都能为环保项目捐款，同时获取广告分成。",
+    rating: 3,
+    contact: "support@ecosia.com"
+},
+{
+    id: 103,
+    name: "Etsy手工艺术品销售",
+    url: "https://www.etsy.com",
+    description: "销售手工制作的艺术品和定制化商品，适合手工艺人和创意设计师。",
+    rating: 3,
+    contact: "support@etsy.com"
+},
+{
+    id: 104,
+    name: "TikTok电商带货",
+    url: "https://www.tiktok.com",
+    description: "通过TikTok直播或短视频推广商品，适合有创意和粉丝基础的内容创作者。",
+    rating: 4,
+    contact: "support@tiktok.com"
+},
+{
+    id: 105,
+    name: "B站UP主",
+    url: "https://www.bilibili.com",
+    description: "通过上传视频获取广告分成、粉丝打赏和品牌合作收入，适合视频创作者。",
+    rating: 4,
+    contact: "support@bilibili.com"
+},
+{
+    id: 106,
+    name: "小红书博主",
+    url: "https://www.xiaohongshu.com",
+    description: "通过生活方式、美妆、时尚等内容创作获取品牌合作和广告收入。",
+    rating: 3,
+    contact: "support@xiaohongshu.com"
+},
+{
+    id: 107,
+    name: "知乎专栏作者",
+    url: "https://www.zhihu.com",
+    description: "通过撰写高质量的专栏文章获取打赏和广告收入，适合知识分享者。",
+    rating: 3,
+    contact: "support@zhihu.com"
+},
+{
+    id: 108,
+    name: "喜马拉雅音频创作",
+    url: "https://www.ximalaya.com",
+    description: "通过有声读物、播客等内容创作获取分成，适合音频创作者。",
+    rating: 3,
+    contact: "support@ximalaya.com"
+},
+{
+    id: 109,
+    name: "抖音小店",
+    url: "https://www.douyin.com",
+    description: "通过抖音平台开设小店，销售商品获取收益，适合电商从业者。",
+    rating: 4,
+    contact: "support@douyin.com"
+},
+{
+    id: 110,
+    name: "微信公众号",
+    url: "https://mp.weixin.qq.com",
+    description: "通过内容创作获取广告分成、粉丝打赏和品牌合作收入，适合内容创作者。",
+    rating: 3,
+    contact: "support@weixin.qq.com"
+},
+{
+    id: 111,
+    name: "Bing搜索引擎营销",
+    url: "https://www.bing.com",
+    description: "通过Bing广告推广产品或服务，适合营销人员。",
+    rating: 3,
+    contact: "support@bing.com"
+},
+{
+    id: 112,
+    name: "Telegram频道运营",
+    url: "https://www.telegram.org",
+    description: "通过Telegram频道推广内容或产品，适合内容创作者。",
+    rating: 3,
+    contact: "support@telegram.org"
+},
+{
+    id: 113,
+    name: "Clubhouse音频社交",
+    url: "https://www.clubhouse.com",
+    description: "通过音频社交获取品牌合作机会，适合社交达人。",
+    rating: 3,
+    contact: "support@clubhouse.com"
+},
+{
+    id: 114,
+    name: "OnlyFans创作者",
+    url: "https://www.onlyfans.com",
+    description: "通过付费订阅模式获取收入，适合内容创作者。",
+    rating: 3,
+    contact: "support@onlyfans.com"
+},
+{
+    id: 115,
+    name: "Stack Overflow技术问答",
+    url: "https://www.stackoverflow.com",
+    description: "通过技术问答获取广告收入，适合开发者。",
+    rating: 3,
+    contact: "support@stackoverflow.com"
+},
+{
+    id: 116,
+    name: "Dribbble设计作品展示",
+    url: "https://www.dribbble.com",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@dribbble.com"
+},
+{
+    id: 117,
+    name: "Behance设计作品展示",
+    url: "https://www.behance.net",
+    description: "展示设计作品，通过项目合作和客户委托盈利，适合设计师。",
+    rating: 3,
+    contact: "support@behance.net"
+},
+{
+    id: 118,
+    name: "Spotify音乐创作",
+    url: "https://www.spotify.com",
+    description: "上传音乐作品，通过流媒体播放分成盈利，适合音乐创作者。",
+    rating: 3,
+    contact: "support@spotify.com"
+},
+{
+    id: 119,
+    name: "Ebay Dropshipping",
+    url: "https://www.ebay.com",
+    description: "通过Ebay进行无库存销售，适合电商新手。",
+    rating: 3,
+    contact: "support@ebay.com"
+},
+{
+    id: 120,
+    name: "TikTok电商带货",
+    url: "https://www.tiktok.com",
+    description: "通过TikTok直播或短视频带货，适合内容创作者和电商从业者。",
+    rating: 4,
+    contact: "support@tiktok.com"
+},
+ 
 
-            // 可以继续添加更多静态数据
-        ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+];
 
         // 系统配置
         const projectsPerPage = 10;
