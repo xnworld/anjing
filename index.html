@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网赚项目收录网</title>
     <style>
+
+
+
+
 /* 新增样式 - 表格单元格超出部分显示省略号 */
 td {
     white-space: nowrap; /* 防止文本换行 */
@@ -98,14 +102,22 @@ td {
             border: 1px solid #ddd;
         }
 
-        th,
-        td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid #eee;
-            font-size: 16px;
+    
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #eee;
+    font-size: 16px;
+}
 
-	 
+
+
+
+
+
+
+
  
  
 
@@ -220,6 +232,9 @@ td {
                 padding: 10px;
                 font-size: 14px;
             }
+
+ 
+
 
             .pagination button {
                 margin: 5px;
@@ -560,6 +575,38 @@ a[target="_blank"] {
     font-size: 14px;
     letter-spacing: 2px;
 }
+
+ 
+/* 添加钱的图案样式 */
+.header-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-title a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.header-title img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.header-title a:hover {
+    text-decoration: underline;
+}
+
+ 
+
+
+
+
 </style>
 
 
@@ -574,7 +621,23 @@ a[target="_blank"] {
 
 <body>
     <div class="container">
-        <h1>网赚项目收录网</h1>
+      
+<div class="header-title">
+    <a href="/" onclick="goToHome(event)">
+        <img src="https://via.placeholder.com/50?text=$" alt="Money Icon" class="money-icon">
+        网赚项目收录网
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="搜索项目名称或描述..." >
         </div>
@@ -1723,6 +1786,19 @@ row.addEventListener("click", (event) => {
 
         // 初始化
         renderTable();
+
+
+
+// 返回首页的函数
+function goToHome(event) {
+    event.preventDefault(); // 阻止默认的链接行为
+    window.location.href = "/"; // 跳转到首页
+}
+
+
+
+
+
     </script>
 </body>
 
