@@ -624,6 +624,34 @@ a[target="_blank"] {
 
 
 
+/* 金子标志样式 */
+.gold-icon {
+    width: 50px;
+    height: 50px;
+    // background-color: #ffd700; /* 金色背景 */
+    border-radius: 50%; /* 圆形 */
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gold-icon::before {
+    content: "💰"; /* 使用金子符号 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+
+
+
 </style>
 
 
@@ -640,10 +668,11 @@ a[target="_blank"] {
     <div class="container">
       
  
-       <div class="header">
-               <div class="money-icon" onclick="goToHome()"></div>
-                <h1 onclick="goToHome()">网赚项目收录网</h1>
-        </div>
+        <div class="header">
+         			 <div class="gold-icon" onclick="goToHome()"></div>
+  			  <h1 onclick="goToHome()">网赚项目收录网</h1>
+       </div>
+
     <!-- 其他内容 -->
  
 
@@ -1810,6 +1839,7 @@ row.addEventListener("click", (event) => {
 function goToHome() {
     window.location.href = "https://xnworld.github.io/shoulu/"; // 假设首页是当前页面的顶部
 }
+
 
  
 
