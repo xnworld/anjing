@@ -1,14 +1,12 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网赚项目收录网</title>
-   
-  <!--   以下为seo优化部分  -->
+    <!-- SEO优化部分 -->
     <meta name="description" content="网赚项目收录网为您提供最新的网赚项目推荐，涵盖多种领域，包括电商、内容创作、自由职业等。">
-    <meta name="keywords" content="网赚项目, 电商, 内容创作, 自由职业, 问卷调查,  广告联盟，抖音，快手，短视频">
+    <meta name="keywords" content="网赚项目, 电商, 内容创作, 自由职业, 问卷调查, 广告联盟，抖音，快手，短视频">
     <meta name="author" content="网赚项目收录网团队">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="网赚项目收录网 - 优质网赚项目推荐">
@@ -22,30 +20,10 @@
     <meta name="twitter:image" content="https://shoulu.xnworld.com/assets/logo.png">
     <link rel="canonical" href="https://shoulu.xnworld.com/">
     <link rel="icon" href="https://shoulu.xnworld.com/assets/favicon.ico" type="image/x-icon">
-  
 
-
-
-
-
-
-
-
- 	<style>
-
-
-
-
-/* 新增样式 - 表格单元格超出部分显示省略号 */
-td {
-    white-space: nowrap; /* 防止文本换行 */
-    overflow: hidden; /* 隐藏超出部分 */
-    text-overflow: ellipsis; /* 超出部分显示省略号 */
-    max-width: 200px; /* 设置单元格最大宽度 */
-}
-        /* 整体页面字体和背景设置 */
+    <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Microsoft YaHei', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -53,7 +31,6 @@ td {
             line-height: 1.6;
         }
 
-        /* 主容器样式 */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -64,23 +41,44 @@ td {
             border-radius: 12px;
         }
 
-        /* 标题样式 */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
         h1 {
             text-align: center;
             color: #333;
             font-size: 36px;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin: 0;
         }
 
-        /* 搜索框容器样式 */
+        .gold-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .gold-icon::before {
+            content: "💰";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+        }
+
         .search-box {
             margin-bottom: 30px;
- 
             text-align: center;
         }
 
-        /* 搜索输入框样式 */
         #searchInput {
             width: 80%;
             max-width: 400px;
@@ -96,13 +94,11 @@ td {
             outline: none;
         }
 
-        /* 排序按钮容器样式 */
         .sort-buttons {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        /* 排序按钮样式 */
         .sort-buttons button {
             padding: 10px 20px;
             margin: 0 8px;
@@ -112,7 +108,6 @@ td {
             border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            font-size: 16px;
         }
 
         .sort-buttons button:hover {
@@ -120,46 +115,37 @@ td {
             transform: translateY(-2px);
         }
 
-        /* 表格样式 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-    
-th,
-td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid #eee;
-    font-size: 16px;
-}
-
-
-
-
-
-
-
-
- 
- 
-
-
-        }
-
-        td:first-child {
-            background-color: #f8f9fa;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
+        .project-item {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             cursor: pointer;
+            transition: transform 0.2s ease;
+            overflow: hidden; /* 添加溢出隐藏 */
+            white-space: nowrap; /* 添加不换行 */
+            text-overflow: ellipsis; /* 添加省略号 */
         }
 
-        /* 分页样式 */
+        .project-item p {
+            margin: 0 0 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .project-item .rating {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
         .pagination {
             text-align: center;
             margin-top: 30px;
@@ -173,20 +159,13 @@ td {
             color: #fff;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease;
         }
 
         .pagination button:hover {
             background-color: #218838;
-            transform: translateY(-2px);
         }
 
-        .rating {
-            color: #ffc107;
-            font-weight: bold;
-        }
-
-        /* 新增样式 - 模态框 */
         .modal {
             display: none;
             position: fixed;
@@ -207,22 +186,15 @@ td {
             width: 90%;
             max-width: 500px;
             position: relative;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             animation: fadeIn 0.3s ease;
+            font-family: 'Microsoft YaHei', sans-serif;
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 回到顶部按钮 */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -235,15 +207,8 @@ td {
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             display: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .back-to-top:hover {
-            background: #e0a800;
-            transform: scale(1.1);
-        }
-
-        /* 页脚样式 */
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -253,385 +218,54 @@ td {
         }
 
         @media (max-width: 768px) {
-            td,
-            th {
-                padding: 10px;
-                font-size: 14px;
-            }
-
- 
-
-
-            .pagination button {
-                margin: 5px;
-                padding: 8px 12px;
-            }
-
-            /* 在小屏幕上将表格转换为卡片布局 */
-            table,
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                display: block;
-            }
-
-            thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            tr {
-                margin-bottom: 10px;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-            }
-
-            td {
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-            }
-
-            td:before {
-                position: absolute;
-                top: 6px;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                content: attr(data-label);
-                font-weight: bold;
-            }
-
-            /* 调整模态框大小 */
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            #searchInput {
-                width: 100%;
-                font-size: 14px;
-            }
-
-            .sort-buttons button {
-                padding: 6px 10px;
-                font-size: 14px;
-            }
-
-            .pagination button {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            .modal-content {
-                width: 100%;
+            .container {
+                margin: 20px auto;
                 padding: 15px;
             }
+
+            .project-item {
+                padding: 10px;
+            }
+
+            .project-item p {
+                font-size: 12px;
+            }
         }
- 
 
 
 
 
 
-    </style>
- <style>
-/* 在原有媒体查询内添加以下优化样式 */
 
-@media (max-width: 768px) {
-    /* 优化卡片布局 */
-    tr {
-        position: relative;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
 
-    td {
-        padding: 12px 15px 12px 50% !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-    }
 
-    td:before {
-        left: 15px;
-        width: 45%;
-        color: #666;
-        font-weight: normal;
-        font-size: 13px;
-    }
-
- 
-
-    /* 调整按钮尺寸 */
-    .sort-buttons button {
-        margin: 5px;
-        padding: 8px 12px;
-        font-size: 14px;
-        width: 45%;
-    }
-
-    /* 分页按钮响应式 */
-    .pagination {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
-    }
-
-    .pagination button {
-        flex: 1 1 45%;
-        max-width: 120px;
-        padding: 8px;
-        margin: 2px;
-    }
-
-    /* 优化搜索框 */
-    #searchInput {
-        width: 95%;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* 调整容器边距 */
-    .container {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    /* 模态框优化 */
-    .modal-content {
-        max-height: 90vh;
-        overflow-y: auto;
-        padding: 20px 15px;
-    }
-
-    .modal-content p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
+/* 主题色 */
+:root {
+    --primary-color: #28a745; /* 主题色（绿色） */
+    --secondary-color: #ffc107; /* 次级色（黄色） */
+    --text-color: #333; /* 主文本颜色 */
+    --background-color: #f9f9f9; /* 背景颜色 */
 }
 
-@media (max-width: 480px) {
-    /* 极端小屏优化 */
-    td {
-        padding-left: 55% !important;
-        font-size: 13px !important;
-
-
-
-
-    }
-
-    td:before {
-        font-size: 12px !important;
-    }
-
-    h1 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-
-    /* 分页按钮文字换行 */
-    .pagination button {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    /* 联系方式强制换行 */
-    td[data-label="联系方式"] {
-        word-break: break-word;
-        -webkit-line-clamp: 2;
-    }
-
-
-    /* 模态框文字缩放 */
-    #modal-title {
-        font-size: 18px;
-    }
+body {
+    font-family: 'Roboto', sans-serif; /* 使用现代字体 */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* 新增通用移动优化 */
-a[target="_blank"] {
-    word-break: break-all;
-    display: inline-block;
-    padding: 4px 8px;
-    background: #f0f0f0;
-    border-radius: 4px;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
 }
 
-.rating {
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
- 
-
-</style>
-<style>
-/* 在原有媒体查询内添加以下优化样式 */
-
-@media (max-width: 768px) {
-    /* 优化卡片布局 */
-    tr {
-        position: relative;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    td {
-        padding: 12px 15px 12px 50% !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-    }
-
-    td:before {
-        left: 15px;
-        width: 45%;
-        color: #666;
-        font-weight: normal;
-        font-size: 13px;
-    }
-
-
-
-    /* 调整按钮尺寸 */
-    .sort-buttons button {
-        margin: 5px;
-        padding: 8px 12px;
-        font-size: 14px;
-        width: 45%;
-    }
-
-    /* 分页按钮响应式 */
-    .pagination {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
-    }
-
-    .pagination button {
-        flex: 1 1 45%;
-        max-width: 120px;
-        padding: 8px;
-        margin: 2px;
-    }
-
-    /* 优化搜索框 */
-    #searchInput {
-        width: 95%;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* 调整容器边距 */
-    .container {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    /* 模态框优化 */
-    .modal-content {
-        max-height: 90vh;
-        overflow-y: auto;
-        padding: 20px 15px;
-    }
-
-    .modal-content p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 480px) {
-    /* 极端小屏优化 */
-    td {
-        padding-left: 55% !important;
-        font-size: 13px !important;
-    }
-
-    td:before {
-        font-size: 12px !important;
-    }
-
-    h1 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-
-    /* 分页按钮文字换行 */
-    .pagination button {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    /* 联系方式强制换行 */
-    td[data-label="联系方式"] {
-        word-break: break-word;
-        -webkit-line-clamp: 2;
-    }
-
-    /* 模态框文字缩放 */
-    #modal-title {
-        font-size: 18px;
-    }
-}
-
-/* 新增通用移动优化 */
-a[target="_blank"] {
-    word-break: break-all;
-    display: inline-block;
-    padding: 4px 8px;
-    background: #f0f0f0;
-    border-radius: 4px;
-}
-
-.rating {
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-
-
-
-
-
-
-/* 钱币图案样式 */
-.money-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #ffd700; /* 金色背景 */
-    border-radius: 50%; /* 圆形 */
-    display: inline-block;
-    margin-right: 10px;
-    position: relative;
-    cursor: pointer;
-}
-
-.money-icon::before {
-    content: "$"; /* 钱币符号 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: bold;
-    color: #000;
-}
-
-/* 标题样式 */
 .header {
     display: flex;
     align-items: center;
@@ -640,122 +274,208 @@ a[target="_blank"] {
     cursor: pointer;
 }
 
-.header h1 {
+h1 {
+    text-align: center;
+    color: var(--primary-color); /* 使用主题色 */
     font-size: 36px;
-    color: #333;
     font-weight: 600;
     margin: 0;
-    cursor: pointer;
 }
 
-
-
-/* 金子标志样式 */
 .gold-icon {
     width: 50px;
     height: 50px;
-    // background-color: #ffd700; /* 金色背景 */
-    border-radius: 50%; /* 圆形 */
-    display: inline-block;
+    border-radius: 50%;
     margin-right: 10px;
     position: relative;
-    cursor: pointer;
 }
 
 .gold-icon::before {
-    content: "💰"; /* 使用金子符号 */
+    content: "💰";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 30px;
-    font-weight: bold;
-    color: #000;
 }
 
+.search-box {
+    margin-bottom: 30px;
+    text-align: center;
+}
 
+#searchInput {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
 
+#searchInput:focus {
+    border-color: var(--primary-color); /* 使用主题色 */
+    outline: none;
+}
+
+.sort-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sort-buttons button {
+    padding: 10px 20px;
+    margin: 0 8px;
+    border: none;
+    background-color: var(--primary-color); /* 使用主题色 */
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-buttons button:hover {
+    background-color: #218838; /* 按钮悬停颜色 */
+    transform: translateY(-2px);
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.project-item p {
+    margin: 0 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.project-item .rating {
+    color: var(--secondary-color); /* 使用次级色 */
+    font-weight: bold;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: var(--primary-color); /* 使用主题色 */
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #218838; /* 按钮悬停颜色 */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal-title {
+    font-size: 1.2em;
+    color: var(--primary-color); /* 使用主题色 */
+    margin-bottom: 10px;
+}
+
+.modal-url {
+    color: var(--secondary-color); /* 使用次级色 */
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.modal-description {
+    color: #666; /* 描述使用灰色 */
+    margin-bottom: 10px;
+}
+
+.modal-rating {
+    color: var(--secondary-color); /* 使用次级色 */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-contact {
+    color: #666; /* 联系方式使用灰色 */
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px;
+    background: var(--primary-color); /* 使用主题色 */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+}
 
 @media (max-width: 768px) {
-    /* 优化卡片布局 */
-    tr {
-        position: relative;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    td {
-        padding: 12px 15px 12px 50% !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-    }
-
-    td:before {
-        left: 15px;
-        width: 45%;
-        color: #666;
-        font-weight: normal;
-        font-size: 13px;
-    }
-
-    /* 重点突出 ID 字段 */
-    td[data-label="序号"] {
-        font-size: 18px; /* 增大字体大小 */
-        font-weight: bold; /* 加粗字体 */
-        color: #28a745; /* 使用绿色突出显示 */
-       /* text-align: center;  居中显示 */
-        background-color: #f0fff0; /* 添加浅绿色背景 */
-        border-radius: 5px; /* 添加圆角 */
-        padding: 5px; /* 增加内边距 */
-        margin-bottom: 10px; /* 增加与其他内容的间距 */
-    }
-
-    /* 调整按钮尺寸 */
-    .sort-buttons button {
-        margin: 5px;
-        padding: 8px 12px;
-        font-size: 14px;
-        width: 45%;
-    }
-
-    /* 分页按钮响应式 */
-    .pagination {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
-    }
-
-    .pagination button {
-        flex: 1 1 45%;
-        max-width: 120px;
-        padding: 8px;
-        margin: 2px;
-    }
-
-    /* 优化搜索框 */
-    #searchInput {
-        width: 95%;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* 调整容器边距 */
     .container {
         margin: 20px auto;
         padding: 15px;
     }
 
-    /* 模态框优化 */
-    .modal-content {
-        max-height: 90vh;
-        overflow-y: auto;
-        padding: 20px 15px;
+    .project-item {
+        padding: 10px;
     }
 
-    .modal-content p {
-        font-size: 14px;
-        line-height: 1.5;
+    .project-item p {
+        font-size: 12px;
     }
 }
 
@@ -766,108 +486,71 @@ a[target="_blank"] {
 
 
 
-</style>
 
 
 
 
-    <!--   百度统计代码 -->
-
- <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?93248601d43e1fbf28767ec4f0db092f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
+    </style>
 
+    <!-- 百度统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?93248601d43e1fbf28767ec4f0db092f";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
-
 <body>
     <div class="container">
-      
- 
-<div class="header">
-    <div class="gold-icon" onclick="goToHome()"></div>
-    <h1 onclick="goToHome()">网赚项目收录网</h1>
-   
-</div>
-
-
-    <!-- 其他内容 -->
- 
-
-
-
-
-
-
-
-
-
-
+        <div class="header" onclick="goToHome()">
+            <div class="gold-icon"></div>
+            <h1>网赚项目收录网</h1>
+        </div>
 
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="搜索项目名称或描述..." >
+            <input type="text" id="searchInput" placeholder="搜索项目名称或描述...">
         </div>
+
         <div class="sort-buttons">
+
+
+
+
             <button id="ascButton">升序</button>
             <button id="descButton">降序</button>
         </div>
-        <table id="projectTable">
- 
 
-            <thead>
-                <tr>
-                    <th data-sort="id">序号</th>
-                    <th data-sort="name">项目名称</th>
-                    <th>网址</th>
-                    <th>内容描述</th>
-                    <th data-sort="rating">推荐指数</th>
-                    <th>联系方式</th>
-                    <th>发布时间</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <!-- 数据由JavaScript动态加载 -->
-            </tbody>
-        </table>
-        <div class="pagination">
-            <button id="firstPage">首页</button>
-            <button id="prevPage">上一页</button>
-            <button id="nextPage">下一页</button>
-            <button id="lastPage">尾页</button>
+        <div class="project-list" id="projectList">
+            <!-- 项目卡片由JavaScript动态生成 -->
         </div>
+
         <div class="footer">
             <p>站长联系方式：微信：17332273030 QQ：2220003600</p>
-
-
- 
-
-
         </div>
     </div>
 
-    <!-- 新增模态框 -->
     <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h2 id="modal-title"></h2>
+            <p id="modal-url"></p>
             <p id="modal-description"></p>
             <p>推荐指数: <span id="modal-rating" class="rating"></span></p>
             <p>联系方式: <span id="modal-contact"></span></p>
         </div>
     </div>
 
-    <!-- 回到顶部按钮 -->
     <button class="back-to-top" onclick="scrollToTop()">↑</button>
 
     <script>
-        // 初始化数据
-const projects = [
+        // 模拟项目数据
+        const projects = [
+            
+
 {
     id: 1,
     name: "抖音短视频创作者",
@@ -3284,119 +2967,101 @@ const projects = [
 
 
 
+            
+        ];
 
-
-
-
-
-
-
-
-
-
-
-
-
-];
-
-        // 系统配置
-        const projectsPerPage = 20;
+        const initialLoadCount = 20;
+        const loadMoreCount = 5;
         let currentPage = 1;
         let filteredProjects = [...projects];
-        let sortKey = "id";
-        let sortOrder = 1;
+        let isLoading = false;
 
-        // 渲染表格
-        function renderTable() {
-            const tbody = document.getElementById("tableBody");
-            tbody.innerHTML = "";
+        function renderProjects() {
+            const projectList = document.getElementById("projectList");
+            projectList.innerHTML = "";
 
-            const start = (currentPage - 1) * projectsPerPage;
-            const end = start + projectsPerPage;
-            filteredProjects.slice(start, end).forEach(project => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td data-label="序号">${project.id}</td>
-                    <td data-label="项目名称">${project.name}</td>
-                    <td data-label="网址"><a href="${project.url}" target="_blank">访问网站</a></td>
-                    <td data-label="内容描述">${project.description}</td>
-                    <td data-label="推荐指数" class="rating">${"★".repeat(project.rating)}${"☆".repeat(5 - project.rating)}</td>
-                    <td data-label="联系方式">${project.contact}</td>
+            const start = (currentPage - 1) * initialLoadCount;
+            const end = start + initialLoadCount + (currentPage - 1) * loadMoreCount;
+
+            filteredProjects.slice(0, end).forEach(project => {
+                const projectItem = document.createElement("div");
+                projectItem.className = "project-item";
+                projectItem.innerHTML = `
+                    <p style="color: black; font-weight: bold; font-size: 1.2em; font-family: 'Microsoft YaHei', sans-serif;">
+                        ${project.id}. ${project.name}
+                    </p>
+                    <p style="font-family: 'Microsoft YaHei', sans-serif;">
+                        ${project.description}
+                    </p>
+                    <p style="font-family: 'Microsoft YaHei', sans-serif;">
+                        推荐指数: <span class="rating" style="color: #ffc107;">${"★".repeat(project.rating)}${"☆".repeat(5 - project.rating)}</span>
+                    </p>
+                    <p style="font-family: 'Microsoft YaHei', sans-serif;">
+                        联系方式: ${project.contact}
+                    </p>
+                    <p style="font-family: 'Microsoft YaHei', sans-serif;">
+                        发布时间: ${project.publishDate}
+                    </p>
                 `;
 
-row.addEventListener("click", (event) => {
-    // 检查点击的目标是否为链接（<a>标签）
-    if (event.target.tagName.toLowerCase() !== "a") {
-        showModal(project);
-    }
-});
-
-
-
-
-
-
-
-
-                tbody.appendChild(row);
+                projectItem.addEventListener("click", () => showModal(project));
+                projectList.appendChild(projectItem);
             });
-            updatePagination();
+
+            // 初始化加载更多功能
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadMoreProjects();
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1
+            });
+
+            // 观察最后一个项目是否可见
+            if (projectList.children.length > 0) {
+                observer.observe(projectList.children[projectList.children.length - 1]);
+            }
         }
 
-        // 更新分页状态
-        function updatePagination() {
-            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-            document.getElementById("firstPage").disabled = currentPage === 1;
-            document.getElementById("prevPage").disabled = currentPage === 1;
-            document.getElementById("nextPage").disabled = currentPage === totalPages;
-            document.getElementById("lastPage").disabled = currentPage === totalPages;
+        function loadMoreProjects() {
+            if (isLoading) return;
+            isLoading = true;
+            currentPage++;
+            renderProjects();
+            isLoading = false;
         }
 
-        // 搜索功能
+        // 事件监听
         document.getElementById("searchInput").addEventListener("input", (e) => {
             const keyword = e.target.value.toLowerCase();
-            filteredProjects = projects.filter(p =>
-                p.name.toLowerCase().includes(keyword) ||
+            filteredProjects = projects.filter(p => 
+                p.name.toLowerCase().includes(keyword) || 
                 p.description.toLowerCase().includes(keyword)
             );
             currentPage = 1;
-            renderTable();
+            renderProjects();
         });
 
-        // 分页控制
-        document.getElementById("firstPage").addEventListener("click", () => goToPage(1));
-        document.getElementById("prevPage").addEventListener("click", () => goToPage(currentPage - 1));
-        document.getElementById("nextPage").addEventListener("click", () => goToPage(currentPage + 1));
-        document.getElementById("lastPage").addEventListener("click", () =>
-            goToPage(Math.ceil(filteredProjects.length / projectsPerPage))
-        );
+        document.getElementById("ascButton").addEventListener("click", () => {
+            filteredProjects.sort((a, b) => a.id - b.id);
+            renderProjects();
+        });
 
-        // 跳转到指定页码
-        function goToPage(page) {
-            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-            if (page < 1) {
-                page = 1; // 如果小于第一页，则跳转到第一页
-            }
-            if (page > totalPages) {
-                page = totalPages; // 如果大于最后一页，则跳转到最后一页
-            }
-            currentPage = page;
-            renderTable();
-        }
-
-        // 排序功能
-        document.getElementById("ascButton").addEventListener("click", () => sortData("asc"));
-        document.getElementById("descButton").addEventListener("click", () => sortData("desc"));
-        function sortData(order) {
-            filteredProjects.sort((a, b) => order === "asc" ? a.id - b.id : b.id - a.id);
-            renderTable();
-        }
+        document.getElementById("descButton").addEventListener("click", () => {
+            filteredProjects.sort((a, b) => b.id - a.id);
+            renderProjects();
+        });
 
         // 模态框功能
         function showModal(project) {
-            document.getElementById("modal-title").textContent = project.name;
+            document.getElementById("modal-title").innerHTML = `<strong style="font-size: 1.2em; color: black;">${project.name}</strong>`;
+            document.getElementById("modal-url").innerHTML = `<a href="${project.url}" target="_blank" style="color: blue; font-size: 1em;">${project.url}</a>`;
             document.getElementById("modal-description").textContent = project.description;
-            document.getElementById("modal-rating").textContent = "★".repeat(project.rating) + "☆".repeat(5 - project.rating);
+            document.getElementById("modal-rating").innerHTML = `<span style="color: #ffc107;">${"★".repeat(project.rating)}${"☆".repeat(5 - project.rating)}</span>`;
             document.getElementById("modal-contact").textContent = project.contact;
             document.getElementById("modal").style.display = "flex";
         }
@@ -3405,83 +3070,39 @@ row.addEventListener("click", (event) => {
             document.getElementById("modal").style.display = "none";
         }
 
-        // 回到顶部功能
+        // 回到顶部
         window.onscroll = () => {
-            document.querySelector(".back-to-top").style.display =
-                (window.scrollY > 300) ? "block" : "none";
+            document.querySelector(".back-to-top").style.display = 
+                window.scrollY > 300 ? "block" : "none";
         };
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
+        function goToHome() {
+            window.location.href = "http://shoulu.xnworld.com/";
+        }
+
         // 初始化
-        renderTable();
-
-
-function goToHome() {
-    window.location.href = "   http://shoulu.xnworld.com/      "; // 假设首页是当前页面的顶部
-}
-
-
- 
- // 按发布时间降序排列
-projects.sort((a, b) => {
-    const dateA = new Date(a.publishDate);
-    const dateB = new Date(b.publishDate);
-    return dateB - dateA; // 降序排列
-});
-
-// 重新分配ID，从1开始递增
-projects.forEach((project, index) => {
-    project.id = index + 1; // index从0开始，所以加1
-});
-function renderTable() {
-    const tbody = document.getElementById("tableBody");
-    tbody.innerHTML = "";
-
-    const start = (currentPage - 1) * projectsPerPage;
-    const end = start + projectsPerPage;
-    filteredProjects.slice(start, end).forEach(project => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td data-label="序号">${project.id}</td>
-            <td data-label="项目名称">${project.name}</td>
-            <td data-label="网址"><a href="${project.url}" target="_blank">访问网站</a></td>
-            <td data-label="内容描述">${project.description}</td>
-           
-            <td data-label="推荐指数" class="rating">${"★".repeat(project.rating)}${"☆".repeat(5 - project.rating)}</td>
-            <td data-label="联系方式">${project.contact}</td>
-             <td data-label="发布时间">${project.publishDate}</td>  <!-- 添加发布时间列 -->
-        `;
-
-        row.addEventListener("click", (event) => {
-            if (event.target.tagName.toLowerCase() !== "a") {
-                showModal(project);
-            }
-        });
-
-        tbody.appendChild(row);
-    });
-    updatePagination();
-}
-// 初始化
-filteredProjects = [...projects]; // 使用排序后的数据
-renderTable();
-
-
-
-
-
-
-
-
-
+        projects.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+        projects.forEach((p, i) => p.id = i + 1);
+        filteredProjects = [...projects];
+        renderProjects();
     </script>
 
 
 
 
+<div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <p id="modal-url" class="modal-url"></p>
+        <p id="modal-description" class="modal-description"></p>
+        <p>推荐指数: <span id="modal-rating" class="modal-rating"></span></p>
+        <p>联系方式: <span id="modal-contact" class="modal-contact"></span></p>
+    </div>
+</div>
 
 
 
@@ -3497,19 +3118,8 @@ renderTable();
 
 
 
-
-  <!--   谷歌联盟代码  -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5624361140780293"
-     crossorigin="anonymous"></script>
-
- 
-
-
-
-
-
-
-
+    <!-- 谷歌联盟代码 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5624361140780293"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>
